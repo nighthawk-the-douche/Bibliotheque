@@ -227,6 +227,8 @@
 ## CRYPTOGRAPHY
 
 * [XOR](cryptography/xor.md)
+* [RSA](cryptography/rsa.md)
+* [SHA](cryptography/sha.md)
 * [SSL](cryptography/ssl.md)
 * [Diffie-Hellman](cryptography/diffie-hellman.md)
 
