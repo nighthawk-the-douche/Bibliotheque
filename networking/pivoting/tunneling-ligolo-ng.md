@@ -26,7 +26,7 @@ Attacker → Pivot1 → Pivot2 → Target
 
 You don’t manually chain anything — the <mark style="color:yellow;">**interface makes it look local**</mark>, and the <mark style="color:yellow;">**routes decide where traffic goes**</mark><mark style="color:yellow;">.</mark>
 
-<figure><img src="../../.gitbook/assets/Port-Forwarding_Socks5_Tunneling Schemes(6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Port-Forwarding_Socks5_Tunneling Schemes(9).png" alt=""><figcaption></figcaption></figure>
 
 ## <mark style="color:$primary;">LIGOLO-NG</mark>
 
@@ -76,6 +76,9 @@ ligolo-ng » route_add --name ligolo --route 192.168.1.0/24
 
 # Start tunnel on specific interface
 [Agent] » tunnel_start --tun ligolo
+
+# Add listener for relay (listens on all connections to 1234 port and redirects it to attacker)
+ligolo-ng » listener_add --addr 0.0.0.0:1234 --to 127.0.0.1:443
 ```
 
 {% hint style="info" %}
