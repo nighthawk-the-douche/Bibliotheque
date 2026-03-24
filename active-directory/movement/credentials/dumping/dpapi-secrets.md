@@ -4,7 +4,7 @@
 
 <mark style="color:red;">**DPAPI Secrets**</mark> could be any data, as example browser creds, password manager data, vault creds.
 
-<figure><img src="../../../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption><p>Image from Synacktiv article below</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption><p>Image from Synacktiv article below</p></figcaption></figure>
 
 ## <mark style="color:yellow;">LINUX</mark>
 

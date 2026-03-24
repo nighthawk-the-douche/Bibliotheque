@@ -39,11 +39,11 @@ _But besides all explanations I think in this topic pictures are better explaine
 
 <mark style="color:red;">**PDU (Protocol Data Units)**</mark> is a <mark style="color:purple;">**data packet made up of control information**</mark> and data encapsulated from each layer of the OSI model. The breakout below will show how the layers in the two models match up to a PDU.
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 And here you'll see comparison of PDU's with real example of packet:
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## <mark style="color:yellow;">ENCAPSULATION</mark>
 

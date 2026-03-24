@@ -107,7 +107,7 @@ In practice, blind SSRF testing begins with OAST payloads, progresses to partial
 
 Here we are exploiting simple shop app, where it send request to API, which we can change to admin deletion page, because request is made from localhost.
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
 </details>
 
@@ -115,7 +115,7 @@ Here we are exploiting simple shop app, where it send request to API, which we c
 
 <summary>Double URL filter bypass</summary>
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 </details>
 
@@ -123,6 +123,6 @@ Here we are exploiting simple shop app, where it send request to API, which we c
 
 <summary>Open Redirect filter bypass</summary>
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 </details>

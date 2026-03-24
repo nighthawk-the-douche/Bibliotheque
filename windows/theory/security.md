@@ -166,7 +166,7 @@ Each <mark style="color:red;">**ACE**</mark> is made up of the following <mark s
 3. <mark style="color:purple;">**Set of flags**</mark> that specify whether or not child containers/objects can inherit the given ACE entry from the primary or parent object.
 4. <mark style="color:red;">**Access mask**</mark> which is a 32-bit value that defines the rights granted to an object.
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Image from <a href="https://academy.hackthebox.com/"><strong>HTBA</strong></a></p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Image from <a href="https://academy.hackthebox.com/"><strong>HTBA</strong></a></p></figcaption></figure>
 
 ## <mark style="color:$primary;">DPAPI</mark>
 
@@ -190,7 +190,7 @@ User can sign into their system using a standard account. When processes run und
 
 The default <mark style="color:yellow;">**RID**</mark> <mark style="color:yellow;">**500**</mark> administrator account always operates at the high mandatory level. With <mark style="color:red;">**Admin Approval Mode (AAM)**</mark> enabled, any new admin accounts we create will operate at the medium mandatory level by default and be assigned two separate access tokens upon logging in. In the example below, the user account <mark style="color:green;">`ven17`</mark> is in the administrators group, but <mark style="color:green;">`cmd.exe`</mark> is currently running in the context of their unprivileged access token.
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p><strong>UAC Strucure</strong> <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/user-account-control/how-it-works"><strong>[SOURCE]</strong></a></p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p><strong>UAC Strucure</strong> <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/user-account-control/how-it-works"><strong>[SOURCE]</strong></a></p></figcaption></figure>
 
 ## <mark style="color:$primary;">PERMISSION, RIGHT, PRIVILEGE</mark>
 

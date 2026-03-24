@@ -78,7 +78,7 @@ nxc ldap 13.13.13.13 -u yorinobu.arasaka -p 'ihatesaburo' --bloodhound --collect
 
 So basically we have 3 fields: <mark style="color:red;">**Search**</mark>, <mark style="color:red;">**Pathfinding**</mark>, <mark style="color:red;">**Cypher:**</mark>
 
-<figure><img src="../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 In **Search**, we can <mark style="color:purple;">**SEARCH for different objects in AD**</mark>, like users, ou, gpo, etc. We can specify type with tags like
 
@@ -94,11 +94,11 @@ So here we can see that if there is a chain of connections/accesses, it will aut
 
 Also what is awesome, is that each **Edge Label** has more details and even references for more research and how you could abuse it from Linux or Windows, as example I will use DCSync label:
 
-<figure><img src="../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption><p>Label Details</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1) (1) (1).png" alt=""><figcaption><p>Label Details</p></figcaption></figure>
 
 In <mark style="color:red;">**Cypher**</mark> we can use custom, or pre-built searches, which can make <mark style="color:purple;">**search for certain info**</mark> easier.
 
-<figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption><p>Cypher</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption><p>Cypher</p></figcaption></figure>
 
 ### <mark style="color:blue;">Group Management</mark>
 
@@ -120,9 +120,9 @@ And also we can delete our data (because if we imported data in BH, it's not del
 
 Yeah, we made a quick run on recon options, but there are also a few options which could customize our schemas, like <mark style="color:red;">**Hide Labels**</mark>, where there are two types of labels: <mark style="color:red;">**Edge**</mark> and <mark style="color:red;">**Node Label**</mark> where **Node Label** is label of **AD Object**, and **Edge Label** describing how nodes are connected with each other. Also with right click you can mark object as <mark style="color:red;">**Owned**</mark> (skull mark), if you pwned it.
 
-<figure><img src="../.gitbook/assets/image (5) (1).png" alt=""><figcaption><p>With both labels</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (1) (1).png" alt=""><figcaption><p>With both labels</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (6) (1).png" alt=""><figcaption><p>Without Labels</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (6) (1) (1).png" alt=""><figcaption><p>Without Labels</p></figcaption></figure>
 
 ### <mark style="color:blue;">Layout</mark>
 
@@ -130,7 +130,7 @@ It's simple, there are two ways of layout: <mark style="color:red;">**Standart**
 
 > Layout of nodes isn't fixed, and you can move nodes with mouse as you want.
 
-<figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption><p>Standard</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (7) (1).png" alt=""><figcaption><p>Standard</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption><p>Sequential</p></figcaption></figure>
 

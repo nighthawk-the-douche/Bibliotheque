@@ -187,6 +187,7 @@
   * [HTTPS](networking/theory/https.md)
 * [Pivoting](networking/pivoting/README.md)
   * [Port-Forwarding](networking/pivoting/port-forwarding.md)
+  * [Tunneling / Ligolo-NG](networking/pivoting/tunneling-ligolo-ng.md)
 * [Commands and Utilities](networking/commands-and-utilities.md)
 * [Techniques](networking/techniques.md)
 
@@ -227,7 +228,7 @@
 ## CRYPTOGRAPHY
 
 * [XOR](cryptography/xor.md)
-* [RSA](cryptography/rsa.md)
+* [RSA (UA)](cryptography/rsa-ua.md)
 * [SHA](cryptography/sha.md)
 * [SSL](cryptography/ssl.md)
 * [Diffie-Hellman](cryptography/diffie-hellman.md)
