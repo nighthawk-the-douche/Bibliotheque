@@ -1,7 +1,7 @@
 ---
 icon: book-open
 layout:
-  width: wide
+  width: default
   title:
     visible: true
   description:
@@ -87,6 +87,30 @@ The whole **ping-pong** of tickets and requests is shows here:
   This **Ticket** allows a client to authenticate to a specific service. It contains encrypted information that verifies the client's identity and includes a session key that the client can use to communicate securely with the service.
 
 ## <mark style="color:$primary;">PKINIT</mark>
+
+<mark style="color:red;">**PKINIT (Public Key Cryptography for Initial Authentication)**</mark> is an extension to the Kerberos protocol that allows clients to <mark style="color:purple;">**obtain a TGT using asymmetric cryptography**</mark> (public/private key pairs, usually via certificates) instead of a traditional symmetric secret like an NTLM password hash.
+
+In standard Kerberos authentication, the client proves its identity by encrypting a timestamp with its password hash. With PKINIT, the client proves its identity by cryptographically signing the pre-authentication data using a private key, while the Key Distribution Center (KDC) verifies it using the corresponding public key linked to the account.
+
+| **Phase / Component**         | **Standard Kerberos**                                                                                      | **PKINIT**                                                                                                                              |
+| ----------------------------- | ---------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| Pre-Authentication (AS-REQ)   | Client encrypts a timestamp using a symmetric key derived from their password (NTLM hash).                 | Client digitally signs the request using their private key and includes their public certificate.                                       |
+| KDC Validation                | KDC decrypts the timestamp using the user's stored NTLM hash from NTDS.DIT.                                | KDC verifies the digital signature using the public key, checks the certificate against a trusted CA, and maps it to an AD account.     |
+| Session Key Delivery (AS-REP) | KDC encrypts the new TGT session key using the user's password hash. Client uses their hash to decrypt it. | KDC encrypts the TGT session key using the client's public key (or Diffie-Hellman exchange). Client decrypts it with their private key. |
+
+## <mark style="color:$primary;">Service Principal Name (SPN)</mark> <a href="#service-principal-name-spn" id="service-principal-name-spn"></a>
+
+<mark style="color:red;">**Service Principal Name (SPN)**</mark> is a <mark style="color:purple;">**unique identifier of a service instance**</mark>. Kerberos authentication uses SPNs to associate a service instance with a service sign-in account. Doing so allows a client application to request service authentication for an account even if the client doesn't have the account name, because every service has a corresponding service account.
+
+## <mark style="color:$primary;">GMSA</mark>
+
+<mark style="color:red;">**Group Managed Service Accounts (gMSA)**</mark> are an Active Directory feature designed to run automated services. Their highly complex, <mark style="color:yellow;">**120-character passwords are automatically generated**</mark> and rotated by the Domain Controller.
+
+This attack targets the `ReadGMSAPassword` Access Control Entry (ACE).
+
+When an authorized machine needs to run a service, it requests the password from the Domain Controller to authenticate. If we compromise a principal (such as a computer account) holding this permission, we can query LDAP for the msDS-ManagedPassword attribute.
+
+> gMSA passwords are not cracked; they are extracted. The raw binary blob is converted locally into an NTLM hash for Pass-the-Hash (PtH).
 
 ## <mark style="color:$primary;">NTLM</mark>
 

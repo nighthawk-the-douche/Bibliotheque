@@ -16,7 +16,7 @@ Local port forwarding allows you to forward traffic from your local machine to a
 
 Accessing an intranet site or database from your local machine using SSH.
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### <mark style="color:blue;">**Example**</mark>
 

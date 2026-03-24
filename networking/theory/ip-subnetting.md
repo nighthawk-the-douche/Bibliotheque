@@ -1,32 +1,108 @@
 # IP / Subnetting
 
-## <mark style="color:yellow;">IP</mark>
+## <mark style="color:$primary;">IP</mark>
 
 <mark style="color:red;">**IP or Internet Protocol is Network OSI layer**</mark> <mark style="color:purple;">**protocol**</mark>, which is used for identifying devices in the Internet. For this it uses IP addresses. Computer gets it's IP address from software and obtained automatically from a **DHCP** server.
 
-## <mark style="color:yellow;">NIC</mark>
+## <mark style="color:$primary;">NIC</mark>
 
 IP addresses, whether <mark style="color:purple;">**dynamic**</mark> or <mark style="color:purple;">**static**</mark>, are assigned to a <mark style="color:red;">**Network Interface Controller (NIC)**</mark>, also known as a <mark style="color:yellow;">**Network Adapter**</mark>. A system can have multiple **NICs** (both <mark style="color:purple;">**physical**</mark> and <mark style="color:purple;">**virtual**</mark>), allowing it to connect to different networks with multiple IP addresses.
 
-## <mark style="color:yellow;">**Network Address**</mark>
+## <mark style="color:$primary;">**Network Address**</mark>
 
-<mark style="color:purple;">**Identifies a specific network and its range of IPs**</mark>.&#x20;
+<mark style="color:purple;">**Identifies a specific network and its range of IPs**</mark><mark style="color:purple;">**.**</mark>&#x20;
 
 <mark style="color:yellow;">**Example:**</mark> <mark style="color:green;">**192.168.1.0/24**</mark> includes IPs from <mark style="color:green;">**192.168.1.1**</mark> to <mark style="color:green;">**192.168.1.254**</mark>.
 
-## <mark style="color:yellow;">**Broadcast Address**</mark>
+## <mark style="color:$primary;">**Broadcast Address**</mark>
 
 <mark style="color:purple;">**The highest IP in a subnet, used to send messages to all devices within the network.**</mark>
 
 <mark style="color:yellow;">**Example:**</mark> In <mark style="color:green;">**192.168.1.0/24**</mark>, the broadcast address is <mark style="color:green;">**192.168.1.255**</mark>.
 
-## <mark style="color:yellow;">**Gateway Address**</mark>
+## <mark style="color:$primary;">**Gateway Address**</mark>
 
-<mark style="color:purple;">**The router's IP that connects a network to others**</mark>.&#x20;
+<mark style="color:purple;">**The router's IP that connects a network to others**</mark><mark style="color:purple;">**.**</mark>&#x20;
 
 <mark style="color:yellow;">**Example:**</mark> <mark style="color:green;">**192.168.1.1**</mark> is the gateway for <mark style="color:green;">**192.168.1.0/24**</mark>.
 
-## <mark style="color:yellow;">Subnet</mark>
+## <mark style="color:$primary;">Loopback Address</mark>
+
+<mark style="color:purple;">**A special IP used for a device to communicate with itself. Traffic never leaves the machine.**</mark>\
+<mark style="color:yellow;">**Example:**</mark> <mark style="color:green;">**127.0.0.1**</mark> is the most common loopback address and is often called <mark style="color:red;">**localhost**</mark>.
+
+## <mark style="color:$primary;">Wildcard Address</mark>
+
+<mark style="color:purple;">**Represents all network interfaces on the current machine. Used when a service should listen on every available IP.**</mark>\
+<mark style="color:yellow;">**Example:**</mark> If a machine has:
+
+```bash
+127.0.0.1    | (loopback)
+192.168.1.10 | (LAN)
+10.8.0.5     | (VPN)
+```
+
+A service bound to <mark style="color:green;">**0.0.0.0:80**</mark> will accept connections on:
+
+```bash
+127.0.0.1:80
+192.168.1.10:80
+10.8.0.5:80
+```
+
+## <mark style="color:$primary;">Routing Table</mark>
+
+<mark style="color:red;">**A Router**</mark> is a networking <mark style="color:purple;">**device that forwards data packets between computer networks**</mark>. This device is usually connected to two or more different networks. When a packet arrives at a router, it examines destination IP address of the received packet and makes routing decisions accordingly. Routers use **Routing Tables** to determine which interface the packet will be sent out. <mark style="color:yellow;">**A routing table lists all networks for which routes are known.**</mark>
+
+```bash
+IPv4 Route Table                                                                                                                                                                              
+================================================================================                                                                                                                   
+Active Routes:                                                                                                                                                                                
+Network Destination          Netmask          Gateway        Interface  Metric                                                                                                                   
+            0.0.0.0          0.0.0.0        13.13.0.1      13.13.2.177      15                                                                                                                   
+          13.13.0.0      255.255.0.0          On-link      13.13.2.177     271                                                                                                                   
+        13.13.2.177  255.255.255.255          On-link      13.13.2.177     271                                                                                                                   
+      13.13.255.255  255.255.255.255          On-link      13.13.2.177     271
+          127.0.0.0        255.0.0.0          On-link        127.0.0.1     331
+          127.0.0.1  255.255.255.255          On-link        127.0.0.1     331
+    127.255.255.255  255.255.255.255          On-link        127.0.0.1     331
+      192.168.100.0    255.255.255.0          On-link    192.168.100.1     271
+      192.168.100.1  255.255.255.255          On-link    192.168.100.1     271
+    192.168.100.255  255.255.255.255          On-link    192.168.100.1     271
+          224.0.0.0        240.0.0.0          On-link        127.0.0.1     331
+          224.0.0.0        240.0.0.0          On-link    192.168.100.1     271
+          224.0.0.0        240.0.0.0          On-link      13.13.2.177     271
+    255.255.255.255  255.255.255.255          On-link        127.0.0.1     331
+    255.255.255.255  255.255.255.255          On-link    192.168.100.1     271
+    255.255.255.255  255.255.255.255          On-link      13.13.2.177     271
+===============================================================================
+```
+
+* <mark style="color:yellow;">**Network Destination:**</mark> \
+  The target IP address or network segment the outbound packet is trying to reach.
+* <mark style="color:yellow;">**Netmask:**</mark> \
+  The subnet mask that dictates the size of the destination network and determines the most specific route match.
+* <mark style="color:yellow;">**Gateway:**</mark> \
+  The next-hop router IP address, or **"On-link"** if the destination is on the same local segment and requires no routing.
+* <mark style="color:yellow;">**Interface:**</mark> \
+  The local IP address of the logical adapter the operating system will use to push the traffic out.
+* <mark style="color:yellow;">**Metric:**</mark> \
+  The numerical cost assigned to the path, used by the OS to select the cheapest route when multiple options exist.
+
+## <mark style="color:$primary;">**Network Interface (Logical)**</mark>
+
+In a Windows routing table, the <mark style="color:red;">**Interface**</mark> column displays the <mark style="color:purple;">**IP address currently bound to a specific network driver**</mark>. It tells the operating system which logical exit point to use when pushing packets toward a destination.
+
+The OS abstracts the underlying hardware. It does not care if the interface is:
+
+* <mark style="color:yellow;">**Physical copper**</mark> Ethernet adapter.
+* <mark style="color:yellow;">**Virtual switch**</mark> created by VMware, VirtualBox, or Hyper-V (which your `192.168.100.1` likely is).
+* <mark style="color:yellow;">**VPN tunnel**</mark> (like a WireGuard `tun0` or OpenVPN `tap0` interface).
+* <mark style="color:yellow;">**Software loopback**</mark> (`127.0.0.1`).
+
+When the routing table instructs the system to use interface `13.13.2.177`, it simply means: "Hand the packet to the logical adapter that currently owns this IP address."
+
+## <mark style="color:$primary;">Subnet</mark>
 
 There are billions of devices, so to communicate fast and easy with each of it, IP connects firstly not to devices itself, but to <mark style="color:red;">**subnet**</mark>, in which this device is located. This is called <mark style="color:red;">**Scaling**</mark>. Also IP address is <mark style="color:yellow;">**32 bit number**</mark>, where every <mark style="color:yellow;">**8 bit**</mark> is called octet.&#x20;
 
@@ -36,7 +112,7 @@ There are billions of devices, so to communicate fast and easy with each of it, 
 * <mark style="color:green;">**`312.245.10.2`**</mark>
 * <mark style="color:green;">**`312.245.10.3`**</mark>
 
-### <mark style="color:yellow;">Subnet Mask</mark>
+### <mark style="color:$primary;">Subnet Mask</mark>
 
 <mark style="color:red;">**Subnet mask**</mark> is <mark style="color:yellow;">**32-bit**</mark> <mark style="color:purple;">**number**</mark>, which shows us, where in IP address number of network, and where is host. Previously, **Subnet Classes** were used to classify subnets, but this scheme is outdated, so they started using <mark style="color:yellow;">**CIDR**</mark>, which means <mark style="color:yellow;">**Classless Inter-Domain Routing.**</mark>
 
@@ -67,7 +143,7 @@ The subnet mask does not have to end on an octet boundary
 
 So algorithm is that you should replace all **one's** in IP with **zero's** in mask at the same position.
 
-## <mark style="color:yellow;">Manual Math</mark>
+## <mark style="color:$primary;">Manual Math</mark>
 
 ### <mark style="color:blue;">Binary to Decimal</mark>
 
@@ -113,3 +189,7 @@ As example we would divide <mark style="color:green;">**10.200.20.0/27**</mark> 
       * <mark style="color:green;">**Range:**</mark> **10.200.20.24 - 10.200.20.31**
       * <mark style="color:blue;">**Network address:**</mark> **10.200.20.24**
       * <mark style="color:red;">**Broadcast address:**</mark> **10.200.20.31**
+
+## <mark style="color:$primary;">RESOURCES</mark>
+
+{% embed url="https://www.geeksforgeeks.org/computer-networks/routing-tables-in-computer-network/" %}

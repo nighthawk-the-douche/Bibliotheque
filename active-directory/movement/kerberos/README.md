@@ -4,11 +4,11 @@ icon: paw-simple
 
 # Kerberos
 
-## <mark style="color:yellow;">THEORY</mark>
+## <mark style="color:$primary;">THEORY</mark>
 
 {% embed url="https://venator17.gitbook.io/bibliotheque/active-directory/theory#kerberos" %}
 
-## <mark style="color:yellow;">CLOCK ERROR</mark>
+## <mark style="color:$primary;">CLOCK ERROR</mark>
 
 > `[-] Got error while trying to request TGT: Kerberos SessionError: KRB_AP_ERR_SKEW(Clock skew too great)`
 
@@ -30,4 +30,12 @@ sudo ntpdate 13.13.13.13
 
 ```bash
 timedatectl set-ntp 1
+```
+
+## <mark style="color:$primary;">OTHER ERROR (CONFIGURATION FIX)</mark>
+
+> I mainly noticed it when having authentication issues or some tooling requires it to properly interact with the machine.
+
+```bash
+netexec smb 13.13.13.13 -u 'songbird' -p 'p@ssw0rd' --generate-krb5-file ./krb5.conf
 ```

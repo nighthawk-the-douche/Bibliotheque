@@ -44,7 +44,7 @@ You can't use BloodHound if you don't have Collector's (SharpHound or AzureHound
 
 You can install the newest version of SharpHound in <mark style="color:green;">`Download Collectors`</mark> field.&#x20;
 
-<figure><img src="../.gitbook/assets/image (15).png" alt=""><figcaption><p>Download Collectors Field</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (15) (1).png" alt=""><figcaption><p>Download Collectors Field</p></figcaption></figure>
 
 Then after you have SharpHound on your system, you should place it in targets system. How you would do it, it depends on you, but after SharpHound is inside, you can execute it with this command:&#x20;
 

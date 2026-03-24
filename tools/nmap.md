@@ -1,6 +1,10 @@
+---
+icon: eye
+---
+
 # Nmap
 
-## <mark style="color:yellow;">ABOUT</mark>
+## <mark style="color:$primary;">ABOUT</mark>
 
 <mark style="color:red;">**Nmap**</mark> is a <mark style="color:purple;">**complex port-scanning tool**</mark> which is very often used by security specialists. It's more complex that **ncat** so in some ways sysadmins or programmers could use them to check hosts and port available.
 
@@ -10,7 +14,7 @@ And it's a lot more complex than other tool ncat, which we can use for port-scan
 
 <figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>basic netcat port check/scan</p></figcaption></figure>
 
-## <mark style="color:yellow;">CheatSheet</mark>
+## <mark style="color:$primary;">CheatSheet</mark>
 
 | Option                                                 | Description                                                         |
 | ------------------------------------------------------ | ------------------------------------------------------------------- |
@@ -62,34 +66,41 @@ And it's a lot more complex than other tool ncat, which we can use for port-scan
 | <mark style="color:green;">`--min-rate 300`</mark>             | Sets the number of packets that will be sent simultaneously. |
 | <mark style="color:green;">`-T <0-5>`</mark>                   | Specifies the specific timing template.                      |
 
-## <mark style="color:yellow;">Templates</mark>
+## <mark style="color:$primary;">Templates</mark>
 
-#### **Full Intense Scan (Aggressive & Detailed)**
+#### <mark style="color:$success;">**Full Intense Scan (Aggressive & Detailed)**</mark>
 
 ```powershell
 nmap -A -T4 -p- -sS -sV -O 13.13.13.13
 ```
 
-#### Fast, Stealthy Scan (Avoid Detection)
+#### <mark style="color:$success;">Fast, Stealthy Scan (Avoid Detection)</mark>
 
 ```powershell
 nmap -sS -T3 -Pn -f --randomize-hosts --data-length 100 -D RND:10 13.13.13.13
 ```
 
-#### **Scan Multiple Targets**
+#### <mark style="color:$success;">**Scan Multiple Targets**</mark>
 
 ```powershell
 nmap -sS -sV -p 21,22,80,443 -T4 -iL targets.txt
 ```
 
-#### Quick Internal Scan
+#### <mark style="color:$success;">Quick Internal Scan</mark>
 
 ```bash
 nmap -sn 13.13.13.0/24
 ```
 
-#### SYN, Detection Network
+#### <mark style="color:$success;">SYN, Detection Network</mark>
 
 ```bash
 nmap -sS -sV -O -p- 13.13.13.0/24
 ```
+
+## <mark style="color:$primary;">NetScanner</mark>
+
+This is my python script which uses nmap for 4 phases to effectively use time with logging. (Maybe I'll make the same thing for rustscan to have speed too)
+
+{% embed url="https://github.com/venator17/NetScanner" %}
+

@@ -52,13 +52,11 @@
 * [Nmap](tools/nmap.md)
 * [Metasploit](tools/metasploit.md)
 * [BloodHound](tools/bloodhound.md)
+* [NetExec](tools/netexec.md)
 * [Other](tools/other.md)
 * [Hydra](tools/hydra.md)
-* [Mythic](tools/mythic.md)
-* [Sliver](tools/sliver.md)
 * [Mimikatz](tools/mimikatz.md)
 * [Rubeus](tools/rubeus.md)
-* [NetExec](tools/netexec.md)
 
 ## Linux
 
@@ -153,12 +151,15 @@
     * [RBCD](active-directory/movement/kerberos/rbcd.md)
     * [noPAC](active-directory/movement/kerberos/nopac.md)
   * [MITM / Coerced Auths](active-directory/movement/mitm-coerced-auths/README.md)
+    * [NTLM Relay](active-directory/movement/mitm-coerced-auths/ntlm-relay.md)
     * [LLMNR, NBT-NS Poisoning](active-directory/movement/mitm-coerced-auths/llmnr-nbt-ns-poisoning.md)
     * [PetitPotam](active-directory/movement/mitm-coerced-auths/petitpotam.md)
   * [DACL Abuse](active-directory/movement/dacl-abuse/README.md)
     * [AddMember](active-directory/movement/dacl-abuse/addmember.md)
     * [ForceChangePassword](active-directory/movement/dacl-abuse/forcechangepassword.md)
     * [WriteOwner](active-directory/movement/dacl-abuse/writeowner.md)
+    * [ReadGMSAPassword](active-directory/movement/dacl-abuse/readgmsapassword.md)
+    * [WriteSPN](active-directory/movement/dacl-abuse/writespn.md)
   * [Trust Abuse](active-directory/movement/trust-abuse/README.md)
     * [ExtraSIDs](active-directory/movement/trust-abuse/extrasids.md)
   * [ADCS](active-directory/movement/adcs/README.md)
@@ -214,6 +215,14 @@
   * [Command Injection](web/injections/command-injection.md)
 * [Fuzzing](web/fuzzing.md)
 * [DNS](web/dns.md)
+
+## RED TEAMING
+
+* [Methodology](red-teaming/methodology.md)
+* [Sliver](red-teaming/sliver/README.md)
+  * [Implants](red-teaming/sliver/implants.md)
+  * [Pivots](red-teaming/sliver/pivots.md)
+  * [Armory](red-teaming/sliver/armory.md)
 
 ## FORENSICS
 

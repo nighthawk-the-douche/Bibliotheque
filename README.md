@@ -6,7 +6,7 @@ icon: spider
 
 <div align="left"><figure><img src=".gitbook/assets/Glider.png" alt="" width="404"><figcaption></figcaption></figure></div>
 
-## <mark style="color:yellow;">ABOUT ME</mark>&#x20;
+## <mark style="color:yellow;">ABOUT</mark>
 
 I am <mark style="color:green;">`{venator17}`</mark>, cybersecurity student, ethical hacker, and just a savvy who loves hacking, consuming knowledge and as you see likes to teach others.
 
@@ -23,7 +23,7 @@ Also you can check out my [<mark style="color:red;">**Youtube Music Playlist**</
 
 ## <mark style="color:yellow;">THIS PROJECT</mark>
 
-This project is inspired by **Hacker Recipes**, and basically is my library ( this is where the name <mark style="color:blue;">`Bibiliotheque`</mark> came out ) of knowledge, where you can learn basics, or remember things you forgot (which was the initial reason of making site) or just to have a **nice portable cheatsheet**.&#x20;
+This project is inspired by **Hacker Recipes**, and basically is my library (this is where the name <mark style="color:blue;">`Bibiliotheque`</mark> came out) of knowledge, where you can learn basics, or remember things you forgot (which was the initial reason of making site) or just to have a **nice portable cheatsheet**.&#x20;
 
 ***
 
@@ -35,8 +35,7 @@ By reading this website you can notice (especially on the newer sections) that I
 
 * <mark style="color:red;">**Red**</mark> - Terms, abbreviations that are used for the first time or the second time.
 * <mark style="color:purple;">**Purple**</mark> -  Synonym in conjunction with red, if not, then simply to emphasize something.
-* <mark style="color:yellow;">**Yellow**</mark> - Points, important things, things to pay attention to, things that should catch the eye.
-* <mark style="color:blue;">**Blue**</mark> - Subpoints, emphasizing something.
+* <mark style="color:yellow;">**Yellow**</mark> - Iimportant things, things to pay attention to, things that should catch the eye.
 * <mark style="color:green;">**Green**</mark> - Commands, Tools.
 * <mark style="color:orange;">**Orange**</mark> - For caution, important information.
 
