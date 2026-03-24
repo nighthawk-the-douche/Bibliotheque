@@ -1,6 +1,6 @@
 ---
 icon: spider
-cover: ../.gitbook/assets/image.png
+cover: ../.gitbook/assets/image (1).png
 coverY: 0
 layout:
   width: default

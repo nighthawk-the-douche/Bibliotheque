@@ -238,9 +238,9 @@
 
 * [XOR](cryptography/xor.md)
 * [RSA (UA)](cryptography/rsa-ua.md)
+* [Diffie-Hellman (UA)](cryptography/diffie-hellman-ua.md)
 * [SHA](cryptography/sha.md)
 * [SSL](cryptography/ssl.md)
-* [Diffie-Hellman](cryptography/diffie-hellman.md)
 
 ## CLOUD
 
