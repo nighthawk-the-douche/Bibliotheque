@@ -1,7 +1,3 @@
----
-hidden: true
----
-
 # Diffie-Hellman (UA)
 
 ## <mark style="color:$primary;">ЩО ЦЕ ТАКЕ</mark>
