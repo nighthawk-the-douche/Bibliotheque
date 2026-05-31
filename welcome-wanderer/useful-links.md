@@ -58,5 +58,3 @@ icon: link
 * [**WADComs**](https://wadcoms.github.io/)
 
 [<mark style="color:green;">**o\_0**</mark>](https://venator17.gitbook.io/bibliotheque/hidden-section/v17-update)
-
-.

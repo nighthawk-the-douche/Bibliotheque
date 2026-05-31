@@ -8,9 +8,8 @@
 
 ***
 
-* [Hidden Section](hidden-section/README.md)
-  * [asodiah1-23121702c31k2xashdkan23y91nnasd](hidden-section/asodiah1-23121702c31k2xashdkan23y91nnasd.md)
-  * [V17 Update](hidden-section/v17-update.md)
+* [asodiah1-23121702c31k2xashdkan23y91nnasd](asodiah1-23121702c31k2xashdkan23y91nnasd/README.md)
+  * [my-kali-theme](asodiah1-23121702c31k2xashdkan23y91nnasd/my-kali-theme.md)
 
 ## PENTESTING
 
@@ -218,6 +217,22 @@
 * [Fuzzing](web/fuzzing.md)
 * [DNS](web/dns.md)
 
+## MOBILE
+
+***
+
+* [Android OS Theory](android-os-theory/README.md)
+  * [Terminology](android-os-theory/terminology.md)
+  * [Security](android-os-theory/security.md)
+* [Android Applications](android-applications.md)
+* [Code](code.md)
+* [Tools](tools-1/README.md)
+  * [ADB](tools-1/adb.md)
+  * [Android Studio](tools-1/android-studio.md)
+* [Analysis](analysis/README.md)
+  * [Static](analysis/static.md)
+  * [Dynamic](analysis/dynamic.md)
+
 ## RED TEAMING
 
 * [Methodology](red-teaming/methodology.md)
@@ -226,15 +241,15 @@
   * [Pivots](red-teaming/sliver/pivots.md)
   * [Armory](red-teaming/sliver/armory.md)
 
+## programming
+
+* [PYTHON](programming/python.md)
+
 ## FORENSICS
 
 * [Traffic Analysis](forensics/traffic-analysis/README.md)
   * [Wireshark](forensics/traffic-analysis/wireshark.md)
   * [TCPdump](forensics/traffic-analysis/tcpdump.md)
-
-## programming
-
-* [PYTHON](programming/python.md)
 
 ## CRYPTOGRAPHY
 

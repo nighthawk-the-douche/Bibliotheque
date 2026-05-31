@@ -1,19 +1,36 @@
 ---
 icon: spider
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+  metadata:
+    visible: true
+  tags:
+    visible: true
+  actions:
+    visible: true
 ---
 
 # Bibliothèque
 
 <div align="left"><figure><img src=".gitbook/assets/Glider.png" alt="" width="404"><figcaption></figcaption></figure></div>
 
-## <mark style="color:yellow;">ABOUT</mark>
+## <mark style="color:$primary;">ABOUT</mark>
 
-I am <mark style="color:green;">`{venator17}`</mark>, cybersecurity student, ethical hacker, and just a savvy who loves hacking, consuming knowledge and as you see likes to teach others.
+I am <mark style="color:$primary;">`[venator81]`</mark>, ethical hacker,&#x20;
 
 Active on platforms like:
 
 * **\[** [<mark style="color:green;">**HackTheBox**</mark>](https://app.hackthebox.com/profile/637180) **]**
-* **\[** [<mark style="color:blue;">**TryHackMe**</mark>](https://tryhackme.com/r/p/venator17) **]**
 
 Proud member of [<mark style="color:purple;">**purplestorm**</mark>](https://discord.gg/purplestorm) CTF team.
 
@@ -21,9 +38,9 @@ Also you can check out my [<mark style="color:red;">**Youtube Music Playlist**</
 
 ***
 
-## <mark style="color:yellow;">THIS PROJECT</mark>
+## <mark style="color:$primary;">THIS PROJECT</mark>
 
-This project is inspired by **Hacker Recipes**, and basically is my library (this is where the name <mark style="color:blue;">`Bibiliotheque`</mark> came out) of knowledge, where you can learn basics, or remember things you forgot (which was the initial reason of making site) or just to have a **nice portable cheatsheet**.&#x20;
+This project is inspired by **Hacker Recipes**, and basically is my library (this is where the name <mark style="color:blue;">`Bibiliotheque`</mark> is library in French), made for purpose of remembering topics I once knew but forgot. Personally I do not recommend using that website as a source of learning, since I write them for **REPEATING** purpose.
 
 ***
 
