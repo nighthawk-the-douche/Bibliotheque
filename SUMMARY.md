@@ -219,19 +219,17 @@
 
 ## MOBILE
 
-***
-
-* [Android OS Theory](android-os-theory/README.md)
-  * [Terminology](android-os-theory/terminology.md)
-  * [Security](android-os-theory/security.md)
-* [Android Applications](android-applications.md)
-* [Code](code.md)
-* [Tools](tools-1/README.md)
-  * [ADB](tools-1/adb.md)
-  * [Android Studio](tools-1/android-studio.md)
-* [Analysis](analysis/README.md)
-  * [Static](analysis/static.md)
-  * [Dynamic](analysis/dynamic.md)
+* [Android OS Theory](mobile/android-os-theory/README.md)
+  * [Terminology](mobile/android-os-theory/terminology.md)
+  * [Security](mobile/android-os-theory/security.md)
+* [Android Applications](mobile/android-applications.md)
+* [Code](mobile/code.md)
+* [Tools](mobile/tools/README.md)
+  * [ADB](mobile/tools/adb.md)
+  * [Android Studio](mobile/tools/android-studio.md)
+* [Analysis](mobile/analysis/README.md)
+  * [Static](mobile/analysis/static.md)
+  * [Dynamic](mobile/analysis/dynamic.md)
 
 ## RED TEAMING
 
