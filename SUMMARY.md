@@ -4,12 +4,29 @@
 
 * [Bibliothèque](README.md)
 * [Mindset](welcome-wanderer/mindset.md)
+* [Optimized Cognitive Processing (OCP)](welcome-wanderer/optimized-cognitive-processing-ocp/README.md)
+  * [Metacognition](welcome-wanderer/optimized-cognitive-processing-ocp/metacognition.md)
+  * [Pattern Recognition](welcome-wanderer/optimized-cognitive-processing-ocp/pattern-recognition.md)
+  * [Selective Attention](welcome-wanderer/optimized-cognitive-processing-ocp/selective-attention.md)
+  * [Progressive Summarization](welcome-wanderer/optimized-cognitive-processing-ocp/progressive-summarization.md)
+  * [Timeboxing](welcome-wanderer/optimized-cognitive-processing-ocp/timeboxing.md)
+  * [Feynman Technique](welcome-wanderer/optimized-cognitive-processing-ocp/feynman-technique.md)
+  * [Interval Learning](welcome-wanderer/optimized-cognitive-processing-ocp/interval-learning.md)
+  * [AI Usage](welcome-wanderer/optimized-cognitive-processing-ocp/ai-usage.md)
+* [ Оптимізована Когнітивна Обробка](welcome-wanderer/optimizovana-kognitivna-obrobka/README.md)
+  * [Метамислення](welcome-wanderer/optimizovana-kognitivna-obrobka/metamislennya.md)
+  * [Розпізнавання Паттернів](welcome-wanderer/optimizovana-kognitivna-obrobka/rozpiznavannya-patterniv.md)
+  * [Селективна Увага](welcome-wanderer/optimizovana-kognitivna-obrobka/selektivna-uvaga.md)
+  * [Прогрессивне Підведення Підсумків](welcome-wanderer/optimizovana-kognitivna-obrobka/progressivne-pidvedennya-pidsumkiv.md)
+  * [Таймбоксинг](welcome-wanderer/optimizovana-kognitivna-obrobka/taimboksing.md)
+  * [Техніка Фейнмана](welcome-wanderer/optimizovana-kognitivna-obrobka/tekhnika-feinmana.md)
+  * [Інтервальне Вивчення](welcome-wanderer/optimizovana-kognitivna-obrobka/intervalne-vivchennya.md)
 * [Useful Links](welcome-wanderer/useful-links.md)
 
 ***
 
-* [asodiah1-23121702c31k2xashdkan23y91nnasd](asodiah1-23121702c31k2xashdkan23y91nnasd/README.md)
-  * [my-kali-theme](asodiah1-23121702c31k2xashdkan23y91nnasd/my-kali-theme.md)
+* [asodiah1-23121702c31k2xashdkan23y91nnasd](hidden-section/README.md)
+  * [my-kali-theme](hidden-section/v17-update.md)
 
 ## PENTESTING
 
