@@ -18,6 +18,8 @@ Majority of devices run **ARM (AArch64)**. x86/x86-64 supported in later version
 
 Android's architecture is a six-layer stack where each layer depends on the one below it and exposes functionality to the one above.
 
+<figure><img src="../../.gitbook/assets/Android Schemes(1).png" alt=""><figcaption></figcaption></figure>
+
 #### <mark style="color:red;">Linux Kernel</mark>
 
 The foundation of the entire platform. Responsible for managing device hardware — display, camera, Bluetooth, WiFi, audio, USB, and more. Also handles lower-level OS functions like threading, memory management, and process scheduling, which the Android Runtime relies on. Android does not use a stock Linux kernel — it includes custom patches and drivers (most importantly, the Binder IPC driver) that don't exist in upstream Linux.
@@ -96,6 +98,8 @@ A rooted device gives full control — useful for security research, app analysi
 ## <mark style="color:$primary;">APK STRUCTURE</mark>
 
 APK is an archive (`.apk`) containing all components needed to install and run an app.
+
+<figure><img src="../../.gitbook/assets/Android Schemes.png" alt=""><figcaption></figcaption></figure>
 
 Compilation flow: Java/Kotlin source → Java bytecode → **DEX** (Dalvik Executable) → executed by ART (Android 5.0+) or Dalvik VM (older).
 

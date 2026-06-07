@@ -37,7 +37,7 @@ HTML/JS files → `app/assets` (`app/src/main/assets` in Project view).
 
 Building blocks that define different parts of an Android app — UI, background logic, data access, and event handling. All components must be declared in `AndroidManifest.xml` to be recognized by the system. They can be used individually or in combination.
 
-Components communicate with each other — both within the same app and across different apps — via **IPC** (Interprocess Communication). This is what allows, for example, one app to trigger an action in another, or separate processes within the same app to exchange data.
+Components communicate with each other — both within the same app and across different apps — via **IPC** **(Interprocess Communication)**. This is what allows, for example, one app to trigger an action in another, or separate processes within the same app to exchange data.
 
 Main components: Activities, Services, Broadcast Receivers, Content Providers.
 
@@ -45,7 +45,9 @@ Main components: Activities, Services, Broadcast Receivers, Content Providers.
 
 Single screen with a UI. Can appear as full-screen, floating, embedded, or multi-window.
 
-#### Lifecycle Callbacks
+<figure><img src="../.gitbook/assets/Activity_Process.png" alt=""><figcaption></figcaption></figure>
+
+#### <mark style="color:purple;">Lifecycle Callbacks</mark>
 
 | Callback                                           | What happens                                                                                                                                                                                                    |
 | -------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -59,7 +61,7 @@ Single screen with a UI. Can appear as full-screen, floating, embedded, or multi
 
 Android maintains an **Activity stack** per task. New Activity → pushed on top → becomes active. Back navigation → popped from stack.
 
-#### Declaring Activities
+#### <mark style="color:purple;">Declaring Activities</mark>
 
 Must be declared in `AndroidManifest.xml` as child of `<application>`:
 
@@ -74,7 +76,7 @@ Must be declared in `AndroidManifest.xml` as child of `<application>`:
 
 `android.intent.action.MAIN` marks the entry point of the app — first Activity launched on start. Entry point identification is a priority during pentesting (maps attack surface and app flow).
 
-#### Intents
+#### <mark style="color:purple;">Intents</mark>
 
 Messaging objects used to request an action from another component (same or other app).
 
@@ -102,9 +104,9 @@ public class ExampleService extends Service {
 
 Serve two roles simultaneously: an Application Component and an IPC mechanism.
 
-As an **IPC mechanism** — enable communication between different applications by sending and receiving Intents. These Intents can come from the Android system, other apps, or the app itself.
+As an <mark style="color:$danger;">**IPC mechanism**</mark> — <mark style="color:purple;">**enable communication between different applications by sending and receiving Intents**</mark>. These Intents can come from the Android system, other apps, or the app itself.
 
-As an **Application Component** — designed to respond to system-wide or custom events. Act as a messaging system across the entire Android ecosystem. For example, the system broadcasts an event when the device starts charging, and any app with a registered receiver for that event will be notified.
+As an <mark style="color:$danger;">**Application Component**</mark> — <mark style="color:purple;">**designed to respond to system-wide or custom events**</mark>. Act as a messaging system across the entire Android ecosystem. For example, the system broadcasts an event when the device starts charging, and any app with a registered receiver for that event will be notified.
 
 Broadcast Receivers do not have a UI and are not long-running — `onReceive()` is called and expected to finish quickly.
 
@@ -133,9 +135,9 @@ public class MyBroadcastReceiver extends BroadcastReceiver {
 
 Serve two roles simultaneously: an Application Component and an IPC mechanism.
 
-As an **IPC mechanism** — enable communication between apps by allowing them to access, modify, or delete data through a consistent interface via the `ContentResolver` class.
+As an <mark style="color:$danger;">**IPC mechanism**</mark> — <mark style="color:purple;">**enable communication between apps**</mark> by allowing them to access, modify, or delete data through a consistent interface via the `ContentResolver` class.
 
-As an **Application Component** — responsible for managing and exposing structured data, either within the same app or to external apps. Act as an intermediate layer between the app and its underlying data storage.
+As an <mark style="color:$danger;">**Application Component**</mark> — <mark style="color:purple;">**responsible for managing and exposing structured data**</mark>, either within the same app or to external apps. Act as an intermediate layer between the app and its underlying data storage.
 
 Data can be stored in: local SQLite databases, internal/external device storage, or a remote server. All interaction goes through a standardized **CRUD** (Create, Read, Update, Delete) API, regardless of the storage backend — this is what makes Content Providers a clean abstraction for data sharing across process boundaries.
 
@@ -143,34 +145,81 @@ Data can be stored in: local SQLite databases, internal/external device storage,
 
 High-level Java abstractions built on top of the Binder driver. They define the logic and format of interaction — the actual data transfer is delegated to Binder underneath.
 
-### <mark style="color:purple;">Intents (Point-to-Point)</mark>
+### <mark style="color:blue;">Intents (Point-to-Point)</mark>
 
-Directed message passing. A single, isolated data packet sent to activate a specific component (Activity or Service). Two types:
+Directed message passing. A single, isolated data packet sent to activate a specific component (Activity or Service). An Intent is an object — it carries an action string, a target component (optional), a URI describing the data, extras (key-value pairs), and flags that modify how the OS handles it. Two types:
 
-* **Explicit Intent** — targets a specific component by class name. Used within the same app.
-* **Implicit Intent** — declares an action (e.g., `VIEW`, `SEND`) and lets the OS resolve which component handles it.
+* <mark style="color:red;">**Explicit Intent**</mark> — targets a specific component by fully qualified class name (`com.example.app/.TargetActivity`). The OS delivers it directly, no resolution needed. Used within the same app — you know exactly what you're launching.
+* <mark style="color:red;">**Implicit Intent**</mark> — declares an action (`VIEW`, `SEND`, `DIAL`, etc.) and optionally a data URI or MIME type, but no target component. The OS queries all installed apps for a matching `<intent-filter>` in their manifests and presents a chooser if multiple matches exist. If only one app matches, it gets the Intent silently.
 
-### <mark style="color:purple;">Deep Links (External Trigger)</mark>
+<mark style="color:purple;">**Examples:**</mark>
 
-URL-based routing mechanism (`scheme://...`) that causes the OS to generate an implicit Intent from an external source (browser, another app) and route it into the app. The app receives it like any other Intent.
+* Tapping "Share" in a photo app → implicit Intent with action `SEND` and MIME `image/jpeg` → OS resolves to WhatsApp, Gmail, Telegram, etc.
+* Banking app navigating from login screen to dashboard → explicit Intent targeting `DashboardActivity` directly
+* Clicking a link in Gmail → implicit Intent with action `VIEW` and a `https://` URI → OS resolves to the default browser
+* Payment app launching a PIN entry screen and waiting for the result → `startActivityForResult()` with an explicit Intent
 
-Attack vectors: parameter manipulation, authentication bypass, XSS if the target is a WebView.
+### <mark style="color:blue;">Deep Links (External Trigger)</mark>
 
-### <mark style="color:purple;">Broadcast Receivers (Publish / Subscribe)</mark>
+URL-based routing mechanism that causes the OS to generate an implicit Intent from an external source and route it into a specific app. The app registers a custom URI scheme (`myapp://`) or an `https://` domain pattern in its manifest via `<intent-filter>`. When that URL is opened from a browser or another app, the OS matches it and delivers it as a regular Intent — the receiving Activity handles it exactly like any other incoming Intent.
 
-Global or local event broadcasting. A process emits a message into the system (e.g., "screen unlocked", "battery low"), and all previously registered receivers intercept it. No direct targeting — any component registered for that action receives it.
+<mark style="color:purple;">**Examples:**</mark>
 
-* **Global broadcast** — system-wide, any app can receive
-* **Local broadcast** (`LocalBroadcastManager`) — scoped to the same app, not visible to other apps
+* `twitter://user?id=123` opened from a browser → OS generates Intent → Twitter app opens the profile directly
+* Password reset link (`myapp://reset?token=abc123`) clicked in an email → app opens the reset screen with the token pre-loaded via `getIntent().getData()`
+* Spotify `spotify://track/3n3Ppam7vgaVa1iaRUIOKE` → opens a specific song directly
 
-### <mark style="color:purple;">Content Providers (Data Export / CRUD)</mark>
+Attack vectors: parameter manipulation (passing unexpected values in extras or URI params), authentication bypass (deep link skips login gate), XSS if the URI data is rendered in a WebView without sanitization, task hijacking if the target Activity has a misconfigured `launchMode`.
 
-Expose access to a local SQLite database or files to other apps through a standardized URI interface (`content://authority/path`). The requesting app interacts via `ContentResolver` — it never touches the storage directly.
+### <mark style="color:blue;">Broadcast Receivers (Publish / Subscribe)</mark>
 
-All operations map to CRUD: `query()`, `insert()`, `update()`, `delete()`. Access can be permission-gated per URI path.
+Global or local event broadcasting. A process emits a message into the system by sending an Intent — but unlike point-to-point Intents, there is no single target. Instead, the OS delivers the message to every component that has registered interest in that action, either statically (in the manifest) or dynamically (via `registerReceiver()` at runtime). Receivers that registered dynamically only receive broadcasts while the app is running; static receivers can be woken up by the system even if the app isn't running.
 
-### <mark style="color:purple;">Bound Services / AIDL (Remote Procedure Call)</mark>
+* <mark style="color:red;">**Global broadcast**</mark> — system-wide. Any app with the matching `<intent-filter>` receives it. Can be protected by requiring a permission to send or receive.
+* <mark style="color:red;">**Local broadcast**</mark> (`LocalBroadcastManager`) — scoped to the same app process. Not visible to other apps, not mediated by Binder — uses an in-process event bus. Faster and no cross-app exposure.
 
-Persistent, bidirectional connection between processes. Process A binds to Process B's Service and can directly call its methods as if they were local — the AIDL (Android Interface Definition Language) interface defines the contract, Binder handles the transport.
+<mark style="color:purple;">**Examples:**</mark>
 
-Unlike Intents (fire-and-forget), a bound connection stays alive as long as at least one client is bound. The Service is destroyed when all clients unbind.
+* System broadcasts `ACTION_BATTERY_LOW` → every app registered for it (battery savers, sync managers) receives notification simultaneously
+* Music player app finishes downloading a song → sends a local broadcast → UI Activity updates the playlist without needing to poll
+* `ACTION_BOOT_COMPLETED` broadcast at device startup → malware classic: register a static receiver for this action, get silently started every reboot
+* SMS app receives `SMS_RECEIVED` broadcast → ordered broadcast, high-priority receivers can intercept and abort it before the default SMS app sees it (`sendOrderedBroadcast`)
+
+### <mark style="color:blue;">Content Providers (Data Export / CRUD)</mark>
+
+Expose structured data from one app to others through a standardized URI interface (`content://authority/path/id`). The requesting app never directly accesses the underlying storage — it calls `ContentResolver` methods, which go through Binder to the provider process. The provider executes the query against its SQLite database (or file, or network) and returns a `Cursor` object with the results.
+
+Access is controlled at two levels: a `READ_URI_PERMISSION` / `WRITE_URI_PERMISSION` can be required for the whole provider, and individual URI paths can have separate permission requirements. Providers can also grant temporary URI permissions to other apps without them holding the permanent permission.
+
+All operations map to CRUD:
+
+| Method                                          | SQL equivalent                                |
+| ----------------------------------------------- | --------------------------------------------- |
+| <mark style="color:$success;">`query()`</mark>  | <mark style="color:$success;">`SELECT`</mark> |
+| <mark style="color:$success;">`insert()`</mark> | <mark style="color:$success;">`INSERT`</mark> |
+| <mark style="color:$success;">`update()`</mark> | <mark style="color:$success;">`UPDATE`</mark> |
+| <mark style="color:$success;">`delete()`</mark> | <mark style="color:$success;">`DELETE`</mark> |
+
+<mark style="color:purple;">**Examples:**</mark>
+
+* Contacts app exposes all contact data via `content://com.android.contacts/contacts` → any app with `READ_CONTACTS` permission can query it
+* Gallery app exposes photos via `MediaStore` Content Provider → third-party editors request specific image URIs without needing broad storage access
+* A messaging app stores chat history in SQLite and exposes it through a Content Provider → backup app reads message history via `ContentResolver.query()`
+* Misconfigured provider with `exported="true"` and no permission requirement → any installed app can query, insert, or delete its data
+
+### <mark style="color:blue;">Bound Services / AIDL (Remote Procedure Call)</mark>
+
+Persistent, bidirectional connection between processes. Unlike an Intent which delivers a message and ends, a bound connection stays open — the client holds a reference to the Service's interface and can call methods on it repeatedly, synchronously, as if the code were local.
+
+The flow: the client calls `bindService()` with an Intent identifying the target Service. The OS starts the Service (if not running) and calls its `onBind()`, which returns an `IBinder` object — the interface the client will call through. The client receives this in `onServiceConnected()` and casts it to the AIDL-generated interface to start making calls.
+
+<mark style="color:$danger;">**AIDL (Android Interface Definition Language)**</mark> is the contract definition layer. The developer writes an `.aidl` file declaring the methods and parameter types. The build system generates the Java stub and proxy classes that handle serialization into Parcels on both sides. Without AIDL, cross-process method calls would require manually serializing and deserializing every argument — AIDL automates this.
+
+The connection stays alive as long as at least one client is bound. When all clients unbind, the OS calls `onUnbind()` and may destroy the Service.
+
+<mark style="color:purple;">**Examples:**</mark>
+
+* Music player: UI Activity binds to a `MusicService` → calls `play()`, `pause()`, `seekTo()` directly on the service interface while music continues in the background
+* Google Play Services: apps bind to `GoogleApiClient` service to access Maps, Auth, or Location APIs — all cross-process via AIDL
+* A DRM service exposing media decryption functions to a media player app via a bound interface — the keys never leave the service process
+* Payment terminal app: merchant UI binds to a card reader Service, calls `readCard()` and `processPayment()` as if local, while the hardware communication happens in the isolated service process
