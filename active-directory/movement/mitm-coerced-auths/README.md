@@ -1,2 +1,0 @@
-# MITM / Coerced Auths
-

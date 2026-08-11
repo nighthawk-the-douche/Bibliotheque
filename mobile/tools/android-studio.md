@@ -1,6 +1,0 @@
----
-icon: android
----
-
-# Android Studio
-

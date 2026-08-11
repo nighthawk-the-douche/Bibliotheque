@@ -1,6 +1,0 @@
----
-icon: arrow-progress
----
-
-# Pivoting
-

@@ -1,6 +1,0 @@
----
-icon: server
----
-
-# Server-Side
-

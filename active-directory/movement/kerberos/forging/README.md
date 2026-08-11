@@ -1,6 +1,0 @@
----
-icon: weight-hanging
----
-
-# Forging
-
