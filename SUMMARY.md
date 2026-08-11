@@ -2,7 +2,7 @@
 
 ## Welcome wanderer
 
-* [Bibliothèque](README.md)
+* [scrapyard](README.md)
 * [Advanced Self-Education](welcome-wanderer/advanced-self-education/README.md)
   * [Metacognition](welcome-wanderer/advanced-self-education/metacognition.md)
   * [Pattern Recognition](welcome-wanderer/advanced-self-education/pattern-recognition.md)
