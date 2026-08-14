@@ -24,3 +24,4 @@
 ## SETUP
 
 * [Kali Setup](setup/kali-setup.md)
+* [Images](setup/images.md)

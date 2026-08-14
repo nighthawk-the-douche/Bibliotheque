@@ -8,7 +8,7 @@
 
 Теорією метакогнітивної регуляції, яка широко цитується в науковій літературі, є модель метасвідомості Нельсона та Наренса (1990). Вона складається з двох рівнів: **рівня об’єкта** та **мета рівня**:
 
-<figure><img src="../../.gitbook/assets/OCP Schemes(1).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="/broken/files/3Hhcw6R2zvnSmnJZpFNC" alt="" width="563"><figcaption></figcaption></figure>
 
 #### <mark style="color:red;">Cвідомість</mark>
 
@@ -56,7 +56,7 @@
 
 Метакогнітивна регуляція стосується того, що учні роблять щодо навчання. Він описує, як учні відстежують і контролюють свої когнітивні процеси. Наприклад, учень може зрозуміти, що певна стратегія не досягає бажаних результатів, тому він вирішить спробувати іншу стратегію.
 
-<figure><img src="../../.gitbook/assets/OCP Schemes(4).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="/broken/files/COjJNXsisrNRaXucOTs9" alt="" width="375"><figcaption></figcaption></figure>
 
 {% stepper %}
 {% step %}

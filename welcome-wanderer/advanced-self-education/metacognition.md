@@ -8,7 +8,7 @@
 
 A widely cited theory of metacognitive regulation is the Nelson and Narens (1990) model of metacognition. It consists of two levels: the **object level** and the **meta level**:
 
-<figure><img src="../../.gitbook/assets/OCP Schemes(2).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="/broken/files/wR7oN10Oleby1MkssLVS" alt="" width="563"><figcaption></figcaption></figure>
 
 #### <mark style="color:red;">Cognition</mark>
 
@@ -56,7 +56,7 @@ Metacognitive knowledge refers to what learners know about learning. This includ
 
 Metacognitive regulation refers to what learners do about learning. It describes how learners monitor and control their cognitive processes. For example, a learner may realize that a particular strategy is not achieving the desired results, so they decide to try a different one.
 
-<figure><img src="../../.gitbook/assets/OCP Schemes(3).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="/broken/files/nOU94IucFYJ40lEz1bx3" alt="" width="375"><figcaption></figcaption></figure>
 
 {% stepper %}
 {% step %}
